@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
-//pragma solidity ^0.8.0; // this line enables us to work with any verion of 0.8
-pragma solidity >=0.6.12 <0.9.0; // solidity version being useds;
+pragma solidity ^0.8.0; // this line enables us to work with any verion of 0.8
+//pragma solidity >=0.6.12 <0.9.0; // solidity version being useds;
 
 contract SimpleStorage {
     /* PRIMARY TYPES
