@@ -9,7 +9,7 @@ with open("./SimpleStorage.sol", "r") as file:
     #print(simple_storage_file)
 
 #C1. Compiling our Solidity
-compile_sol = compile_standard(
+compiled_sol = compile_standard(
     {
         "language": "Solidity",
         "sources": {"SimpleStorage.sol": {"content": simple_storage_file}},
@@ -23,25 +23,26 @@ compile_sol = compile_standard(
 )# for compiling the solidity code
 
 #C2. Writing out the compiled code to a file
-#print(compile_sol)
+#print(compiled_sol)
 with open("compiled_code.json","w") as file:
-    json.dump(compile_sol,file) # The reason why outputting to json fomat is import: the information on the ABI is very important during development
+    json.dump(compiled_sol,file) # The reason why outputting to json fomat is import: the information on the ABI is very important during development
 
 
 #C3. DEPLOYING: What is needed? => The 1. bytecode 2. the abi
 
 ## get the bytecode
-bytecode = compile_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["evm"]["bytecode"]
+bytecode = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["evm"]["bytecode"]
 
 ## get the abi
-abi = compile_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
+abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 
 ## private VM connection (connecting to Ganache)
-w3_link = Web3(Web3.HTTPProvider("http:HTTP://127.0.0.1:7545"))# the http link can be looked up from the menu bar of the a started ganache session
+w3_link = Web3(Web3.HTTPProvider('http://127.0.0.1:7545'))# the http link can be looked up from the menu bar of the a started ganache session
 chain_id = 1337
 my_address = "0xE2B2ec47ac31ED2cfA8a623c90dD7820cBA5fE97" # grab one of the fake IDs from ganache
 private_key = "0x71158d343dee338c503ceedd1aa5b44b25254604224b446f4ba801323a4da1f1" # Warning: bad to keep private key in source code here.
 
 #C4. Create the contract now in python
 SimpleStorage = w3_link.eth.contract(abi=abi,bytecode=bytecode)
-print(SimpleStorage)
+print(w3_link.is_connected())
+#print(SimpleStorage)
