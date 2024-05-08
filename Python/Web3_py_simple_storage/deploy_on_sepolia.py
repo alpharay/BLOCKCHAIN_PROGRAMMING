@@ -61,24 +61,24 @@ abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"][
 ]  # PNB: sometimes people have a separate ABI file (say 'abi.json') where they will place abis instead of getting it from a general json file as done here
 
 ## PNB: node URL or link
-ganache_RPC_SERVER = "http://127.0.0.1:8545"# PNB: I set the port as 7545 for 'ganache-gui' and 8545 for when using 'ganache or ganache-cli'
+sepolia_RPC_ENDPOINT = "https://sepolia.infura.io/v3/318c2edb27004a5782f068547cbd370e"# PNB: Using the endpoint link for sepolia testnet given by my free account on infura.io
 
 ## private VM connection (connecting to Ganache)
 # IPCProvider:
 
 w3 = Web3(Web3.IPCProvider("./path/to/geth.ipc"))
 w3_link = Web3(
-    Web3.HTTPProvider(ganache_RPC_SERVER)
-)  # the http link can be looked up from the menu bar of the a started ganache session
-chain_id = 1337
-my_address = "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1"  # grab one of the fake IDs from ganache
+    Web3.HTTPProvider(sepolia_RPC_ENDPOINT)
+)  # the http link corresponds to the endpoint link given by online EVM (sepolia in this case); as informed by  infura
+chain_id = 11155111 # PNB: you can check the chain_id from 'chainid.network' and 'coincap.com'
+my_address = "0x13cCB09348f46cF194f59Ea505fd747D3ABd737b"  # PNB: grab my address from my metamask wallet that I intend to use
 
 # private_key = "0x71158d343dee338c503ceedd1aa5b44b25254604224b446f4ba801323a4da1f1"  # a. Hardcoding method: Warning: bad to keep private key in source code here.
 # private_key = os.getenv("PRIVATE_KEY")# b. Environmental variable method: A more secure (but not fully effected) approach
 # print(private_key)
 
 # b. Using '.env' file method: make sure to add '.env' file to .gitignore file
-private_key = os.getenv("PRIVATE_KEY")
+private_key = os.getenv("PRIVATE_KEY") #PNB: grab my private key for your wallet; from your metamask
 print(private_key)
 
 ## PNB: Check to see if connection worked
