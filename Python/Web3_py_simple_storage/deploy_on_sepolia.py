@@ -60,7 +60,7 @@ abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"][
     "abi"
 ]  # PNB: sometimes people have a separate ABI file (say 'abi.json') where they will place abis instead of getting it from a general json file as done here
 
-## PNB: node URL or link
+## PNB: node URL or link; Remote Procedure Call (RPC)
 sepolia_RPC_ENDPOINT = "https://sepolia.infura.io/v3/318c2edb27004a5782f068547cbd370e"# PNB: Using the endpoint link for sepolia testnet given by my free account on infura.io
 
 ## private VM connection (connecting to Ganache)
