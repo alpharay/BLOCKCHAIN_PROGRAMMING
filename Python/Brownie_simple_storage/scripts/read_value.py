@@ -5,8 +5,8 @@ def read_contract():
     # ans: The simple storage object is actually an array that we can printing out
     
     # print(SimpleStorage)
-    print(SimpleStorage[0])# for first object deployed
-    simple_storage = SimpleStorage[-1] # for the most recent update
+    print(SimpleStorage[0])# for first object deployed. This SimpleStorage object acts as an array
+    simple_storage = SimpleStorage[-1] # for the most recent update/deployment
     
     # Brownie automatically knows the abi and the address from the compile "build/contract/SimpleStorage.json" file
     print(simple_storage.retrieveView()) 

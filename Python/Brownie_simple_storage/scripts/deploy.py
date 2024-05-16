@@ -55,9 +55,9 @@ def get_account():
     # Determining if we are working on a local DEVELOPMENT NETWORK (via GANACHE-CLI)
     # or on an TESTNET (via ETHEREUM or a third party node provider like infura)
     '''
-    if(network.show_active() == "development"):# pull from our development network
+    if(network.show_active() == "development"):# if we are on the development network (local-net); pull from our development network
         return accounts[0]
-    else: # pull from our testnet via our config file
+    else: # otherwise pull from our 'config' file(s); in this case, pull from our online testnet via our config file
         return accounts.add(config["wallets"]["from_key"])
     
 def main():

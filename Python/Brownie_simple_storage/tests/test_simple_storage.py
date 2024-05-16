@@ -17,7 +17,7 @@ Improve code and make sure every refactored iteration also passes the tests
 
 '''
 A variant of RGR  that we'll use here are
-1. Arrage 
+1. Arrange 
 2. Act 
 3. Assert
 '''
