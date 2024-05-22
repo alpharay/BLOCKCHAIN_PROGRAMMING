@@ -16,3 +16,21 @@ _Brownie_
 | Command                                                                             | Function                                                                 |
 |-------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
 | brownie networks add Ethereum ganache-local host=http://127.0.0.1:7545 chainid=5777 | creates a 'ganache-local' node on the local Ethereum ganache blockchain. |
+
+
+* _GENERAL NOTES_
+
+** _BLOCKCHAIN NOTES_
+- Events are key to realizing the code in the fund me project. <Read on event adds>; They are synonymous to 'print 'statements' in other high level languages
+
+
+** _PYTHON NOTES_
+- __init__ function is used mainly as the default constructor of a class to limit the number of states initializable during its object instantiation. Otherwise objects of the class will have unlimited number of states initializable
+- "__main__" keyword is used to make sure that a package that could be imported into another code could also be run on its own should it have a main function defined. It is used together with the __name__ as so
+  #+begin_src  python
+def main():
+    print("Hello World!")
+
+if __name__ == "__main__":
+    main()
+  #+end_src
