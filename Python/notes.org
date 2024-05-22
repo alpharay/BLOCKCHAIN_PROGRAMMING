@@ -1,9 +1,18 @@
 # KEY COMMANDS
 
 _Brownie_
-| Command         | Use                             |
-|-----------------+---------------------------------|
-| brownie console | Starting brownie with a console |
-|-----------------+---------------------------------|
-|                 |                                 |
-
+| Command                                                      | Use                                                         |
+|--------------------------------------------------------------+-------------------------------------------------------------|
+| brownie console                                              | Starting brownie with a console                             |
+|--------------------------------------------------------------+-------------------------------------------------------------|
+| brownie run <deploy-script-name>.py                          | deploys to default ganache development network              |
+|--------------------------------------------------------------+-------------------------------------------------------------|
+| brownie run <deploy-script-name>.py --network <network-name> | to deploy(transact) on the indicated network <network-name> |
+|                                                              |                                                             |
+|                                                              |                                                             |
+|                                                              |                                                             |
+|                                                              |                                                             |
+* _SPECIFIC COMMANDS_
+| Command                                                                             | Function                                                                 |
+|-------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
+| brownie networks add Ethereum ganache-local host=http://127.0.0.1:7545 chainid=5777 | creates a 'ganache-local' node on the local Ethereum ganache blockchain. |
