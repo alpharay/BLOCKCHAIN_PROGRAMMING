@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT 
+/* SPDX above stands for Software Package Data Exchange*/
 //pragma solidity ^0.8.0; // this line enables us to work with any verion of 0.8
 pragma solidity >=0.6.12 <0.9.0; // solidity version being useds;
 
