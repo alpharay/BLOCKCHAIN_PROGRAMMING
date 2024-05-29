@@ -61,7 +61,7 @@ corepack --version
 ```
 
 ```bash
-yarn add solc@<solidity_verion_used> # to install solc via yarn
+yarn add solc@<solidity_verion_used>-fixed # to install solc via yarn (e.g. $yarn add solc@0.8.14-fixed)
 yarn init -y # if the package.json file is not created
 ```
 
@@ -73,7 +73,7 @@ yarn solcjs --version # to find the version
 yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o . SimpleStorage.sol # to FINALLY COMPILE !!!
 ```
 
-/Other Actions/
+/Key Actions/
 To allow for automatic compilation upon typing 
 ```bash
 yarn compile
@@ -107,4 +107,9 @@ For Linea Goerli testnet: https://linea-goerli.infura.io/v3/
 npm install --save ethers # for npm or
 yarn add ethers # to be able to connect to blockchain and connect to wallets
 yarn add fs-extra # to be able to read ABI and BIN versions of COMPILED files
+```
+
+To deploy
+```bash
+node deploy.js # If we are working with "truffle", we will see our deployed contracts in the "CONTRACTS" pane of ganache but since we are working with "hardhat", we will not see them
 ```
