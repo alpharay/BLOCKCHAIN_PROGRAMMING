@@ -6,71 +6,38 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": true,
 						"internalType": "address",
-						"name": "_token1",
+						"name": "buyer",
 						"type": "address"
 					},
 					{
-						"internalType": "address",
-						"name": "_owner1",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_token2",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_owner2",
-						"type": "address"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [
-					{
+						"indexed": false,
 						"internalType": "uint256",
-						"name": "bdtAmount",
+						"name": "amount",
 						"type": "uint256"
-					}
-				],
-				"name": "getConversionRate",
-				"outputs": [
+					},
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"indexed": false,
+						"internalType": "string",
+						"name": "currency",
+						"type": "string"
 					}
 				],
-				"stateMutability": "pure",
-				"type": "function"
+				"name": "TokensPurchased",
+				"type": "event"
 			},
 			{
 				"inputs": [],
-				"name": "getPrice",
+				"name": "BDT_ETH_RATE",
 				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "owner1",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -78,12 +45,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "owner2",
+				"name": "BDT_USDT_RATE",
 				"outputs": [
 					{
-						"internalType": "address",
+						"internalType": "uint256",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -92,24 +59,91 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_amount1",
-						"type": "uint256"
+						"internalType": "address",
+						"name": "_tokenBDT",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenETH",
+						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_amount2",
+						"name": "_amountETH",
 						"type": "uint256"
 					}
 				],
-				"name": "swap",
+				"name": "_safeBuyWithETH",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenBDT",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenUSDT",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amountUSDT",
+						"type": "uint256"
+					}
+				],
+				"name": "_safeBuyWithUSDT",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "token1",
+				"name": "ownerBDT",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ownerETH",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ownerUSDT",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenBDT",
 				"outputs": [
 					{
 						"internalType": "contract IERC20",
@@ -122,7 +156,20 @@
 			},
 			{
 				"inputs": [],
-				"name": "token2",
+				"name": "tokenETH",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenUSDT",
 				"outputs": [
 					{
 						"internalType": "contract IERC20",
@@ -162,11 +209,11 @@
 	},
 	"sources": {
 		"contracts/BTDTokenSwap.sol": {
-			"keccak256": "0xac32e4bb44fabcd5f50b9a36929b0f872e5d4257cc88027d65314a5848f90974",
+			"keccak256": "0x870d6c0fd8fba32f10d7f3155bd1db7b2fca1e8234f913ba4db3eced88de6eac",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6205ce59822f459e1864e4be338cfd44ff866ac0a012531e03a3846a463d7e8e",
-				"dweb:/ipfs/QmTr7iwwUaesUydQ8DHXEaQQLGKvdwhDppj2soKVmEYac1"
+				"bzz-raw://af037fa3646753eb1fbaf66619ffb24853664b64729ed4017ecac0493dbd7286",
+				"dweb:/ipfs/QmWexMTrexs3qX5V9okuRrttWoDp7HgGvuhuhaVbczvyAM"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/token/ERC20/IERC20.sol": {
