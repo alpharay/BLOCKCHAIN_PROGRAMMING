@@ -91,7 +91,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/IERC20.sol": "IERC20"
+			"contracts/BDTTokenSwapv1.sol": "IERC20"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -105,12 +105,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/IERC20.sol": {
-			"keccak256": "0xf4c3d71d6b805773bc313f202a490ad303a287ce79937112e282a38d57f45d47",
+		"contracts/BDTTokenSwapv1.sol": {
+			"keccak256": "0xc1e2fcdf7a91cbdebb7668e0e0f7073aae0428664ac96e0bf90eb891b09dd731",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://33d0f865759db36106be5a1e57dece91af2fb3f08dcf1af3ecaba53515498264",
-				"dweb:/ipfs/QmcRQB6qt8fjNMREqYRtBA12DP1RPW3WT1vK3Nsy2ecQct"
+				"bzz-raw://c78d7a2e94d24f9901da4be7d6f555a6f47a94c7a34f13844779436985366959",
+				"dweb:/ipfs/QmQQy1UYiN1uKyYRUBWsxDDWDHXxXpyL11HGVnS6rzLZsb"
 			]
 		}
 	},

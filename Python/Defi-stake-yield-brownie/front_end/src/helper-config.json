@@ -1,0 +1,8 @@
+{
+  "42": "kovan",
+  "4": "rinkeby",
+  "1": "mainnet",
+  "1337": "dev",
+  "5777": "ganache",
+  "11155111": "sepolia"
+}

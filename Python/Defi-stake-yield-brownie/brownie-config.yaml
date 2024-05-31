@@ -1,0 +1,27 @@
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@4.2.0
+  - smartcontractkit/chainlink-brownie-contracts@1.1.0
+compiler:
+  solc:
+    remappings:
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.2.0'
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.0'
+dotenv: .env
+networks:
+  development:
+    verify: False
+  ganache:
+    verify: False
+  sepolia: #this was kovan in the video tutorials but I am using sepolia as the kovan testnet has been deprecated  
+    verify: True
+    weth_token: '0x07391dbE03e7a0DEa0fce6699500da081537B6c3' #'0xd0A1E359811322d97991E03f863a0C30C2cF029C'
+    fau_token: '0xFab46E002BbF0b4509813474841E0716E6730136' #'0x952E1c4340Fd0B9E8fdEDF5A2a01982Ae54868Ab'
+    dai_usd_price_feed: '0x14866185B1962B63C3Ea9E03Bc1da838bab34C19' # gotten from the 'Sepolia Testnet' section of [[https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1][Price Feed Contract Addresses]]
+    eth_usd_price_feed: '0x694AA1769357215DE4FAC081bf1f309aDC325306' # gotten from the 'Sepolia Testnet' section of [[https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1][Price Feed Contract Addresses]]
+other_networks:
+  infura:
+      WEB3_INFURA_PROJECT_ID: '318c2edb27004a5782f068547cbd370e'
+wallets:
+  from_key: ${PRIVATE_KEY}
+
+
